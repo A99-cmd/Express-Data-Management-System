@@ -45,20 +45,21 @@ def screen_text():
     log_text.insert(tk.END, "\n")
 
 
-#APP界面
+# APP主程序
 if __name__ == "__main__":
-
+    # 布局设置
+    ## 标题
     window = tk.Tk()
     window.title("快递数据管理系统")
 
-
+    ## log窗口
     log_label = tk.Label(window, text="调试信息窗口：", width=32, height=1, anchor='w')
     log_label.grid(row=0, column=1, padx=(1, 12), pady=(4, 1))
 
     log_text = tk.Text(window, width=32, height=20)
     log_text.grid(row=1, column=1, rowspan=8, padx=(1, 12), pady=(1, 12))
 
-
+    ## 接收版面
     save_label = tk.Label(window, text="当前接收单号：", width=32, height=1, anchor="w")
     save_label.grid(row=0, column=0, padx=(12, 1), pady=(4, 1))
 
@@ -68,7 +69,7 @@ if __name__ == "__main__":
     save_button = tk.Button(window, text="保存当前单号", command=save_text, relief="raised", overrelief="ridge", width=20, height=1)
     save_button.grid(row=2, column=0, padx=(6, 1), pady=(1, 12))
 
-
+    ## 查询版面
     input_label = tk.Label(window, text="输入待查单号：", width=32, height=1, anchor="w")
     input_label.grid(row=3, column=0, padx=(12, 1), pady=(12, 1))
 
@@ -79,7 +80,7 @@ if __name__ == "__main__":
     retrieve_button = tk.Button(window, text="查询输入单号", command=select_text, relief="raised", overrelief="ridge",width=20, height=1)
     retrieve_button.grid(row=5, column=0, padx=(12, 1), pady=(1, 12))
 
-
+    ## 检索版面
     screen_label = tk.Label(window, text="筛选特定信息：", width=32, height=1, anchor="w")
     screen_label.grid(row=6, column=0, padx=(12, 1), pady=(12, 1))
 
